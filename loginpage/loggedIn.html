@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="javascript.js"></script>
+</head>
+<body onload="checkEdits()">
+<div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" height="200p">
+    <h2>Node Website</h2>
+</div>
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h2>Welcome to Node Website!</h2>
+            <div class="fakeimg" style="height:200px;">
+                <div id="edit" contenteditable="true">
+                    <p>Change me  and press save to make the change persist!</p>
+                </div>
+            </div>
+            <br>
+            <input type="button" value="Save" onclick="saveEdits()"/>
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <div class="card">
+            <p>You are currently logged in. Log out?</p>
+            <form action="loggedOut.html">
+                <input type="submit" value="Log Out" />
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <h2>Footer</h2>
+</div>
+</body>
+</html>

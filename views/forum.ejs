@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style rel="stylesheet">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #dddada;
+        }
+
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: #dddada;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+
+        .p {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: rgb(216, 216, 216);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+    </style>
+    <script>
+        function saveEdits() {
+            localStorage.userEdits = document.getElementById("edit").innerHTML;
+        }
+
+        function checkEdits() {
+            if(localStorage.userEdits!=null)
+                document.getElementById("edit").innerHTML = localStorage.userEdits;
+        }
+
+        function redirect() {
+            var url = "loggedOut.html";
+            window.location(url);
+        }
+    </script>
+</head>
+<body onload="checkEdits()">
+<div class="header">
+        <img src="https://media.discordapp.net/attachments/558114917626937367/564637211476099093/SampleImage.png?width=1443&height=236" height="80%" width="80%">
+</div>
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h2>Welcome to Simple Notes!</h2>
+            <div class="fakeimg" style="height:200px;">
+                <div id="edit" contenteditable="true">
+                    <p>Change me  and press save to make the change persist!</p>
+                </div>
+            </div>
+            <br>
+            <input type="button" value="Save" onclick="saveEdits()"/>
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <div class="card">
+            <p>You are currently logged in. Log out?</p>
+            <form action="loggedOut.html">
+                <a href="/users/logout" class="btn btn-secondary">Logout</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
